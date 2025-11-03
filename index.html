@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Quiz | UPJPII</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>3D</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <!-- Ekran startowy -->
+    <div id="start-screen" class="screen active">
+      <div class="glow"></div>
+      <img src="https://diecezja.pl/wp-content/uploads/2019/10/Uniwersytet_Papieski_Jana_Paw%C5%82a_II_w_Krakowie_Logo.png" alt="UPJPII Logo" class="university-logo">
+      <h1 class="title">3D<span class="highlight">Quiz</span></h1>
+      <p class="subtitle">Odkryj rewolucję druku 3D</p>
+      <button id="start-btn" class="btn-primary">Rozpocznij</button>
+    </div>
+
+    <!-- Ekran quizu -->
+    <div id="quiz-screen" class="screen">
+      <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="question-counter">
+        <span id="current-q">1</span> / <span id="total-q">13</span>
+      </div>
+      <h2 id="question" class="question"></h2>
+      <div id="options" class="options-grid"></div>
+      <button id="next-btn" class="btn-secondary" disabled>Dalej</button>
+    </div>
+
+    <!-- Ekran wyniku -->
+    <div id="result-screen" class="screen">
+      <div class="result-glow"></div>
+      <img src="https://diecezja.pl/wp-content/uploads/2019/10/Uniwersytet_Papieski_Jana_Paw%C5%82a_II_w_Krakowie_Logo.png" alt="UPJPII Logo" class="university-logo">
+      <h2 class="result-title">Twój wynik:</h2>
+      <div class="score-circle">
+        <span id="score-text">0%</span>
+        <svg class="circle-chart" viewBox="0 0 36 36">
+          <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+          <path class="circle-progress" id="circle-progress" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+        </svg>
+      </div>
+      <p id="result-message" class="result-message"></p>
+      <button id="restart-btn" class="btn-primary">Spróbuj ponownie</button>
+    </div>
+
+    <!-- Ekran nagrody -->
+    <div id="reward-screen" class="screen">
+      <div class="reward-glow"></div>
+      <img src="https://diecezja.pl/wp-content/uploads/2019/10/Uniwersytet_Papieski_Jana_Paw%C5%82a_II_w_Krakowie_Logo.png" alt="UPJPII Logo" class="university-logo">
+      <h1 class="reward-title">Zgłoś się po nagrodę</h1>
+      <p class="reward-subtitle">Jesteś mistrzem druku 3D!</p>
+      <button id="back-to-result-btn" class="btn-primary">Wróć do wyniku</button>
+    </div>
+  </div>
+
+  <!-- DŹWIĘKI -->
+  <audio id="sound-click" preload="auto"><source src="https://assets.mixkit.co/sfx/preview/mixkit-fast-ui-click-1377.mp3" type="audio/mpeg"></audio>
+  <audio id="sound-select" preload="auto"><source src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-2619.mp3" type="audio/mpeg"></audio>
+  <audio id="sound-next" preload="auto"><source src="https://assets.mixkit.co/sfx/preview/mixkit-quick-positive-ui-2365.mp3" type="audio/mpeg"></audio>
+  <audio id="sound-result" preload="auto"><source src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3" type="audio/mpeg"></audio>
+  <audio id="sound-reward" preload="auto"><source src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3" type="audio/mpeg"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
